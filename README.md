@@ -12,9 +12,4 @@ marketParams := &bitcointrade.MarketParams{
 
 resp, err := marketService.Summary(marketParams)
 
-if err != nil {
-  log.Printf("Summary => '%s'", err)
-}
-
 // Response based on https://github.com/Jeffail/gabs
-resp.Search("data")
