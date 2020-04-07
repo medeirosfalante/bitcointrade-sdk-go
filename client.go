@@ -66,8 +66,6 @@ func (client *APIClient) Request(method, action string, body []byte, query inter
 		return err, nil
 	}
 	bodyResponse, err := ioutil.ReadAll(res.Body)
-	fmt.Printf("\n %s \n", bodyResponse)
-	fmt.Printf("\n %s \n", res.Request.URL)
 	if res.StatusCode > 201 {
 		var errAPI Error
 		err = json.Unmarshal(bodyResponse, &errAPI)
